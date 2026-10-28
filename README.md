@@ -19,3 +19,10 @@ This is my initial version using basic python concepts with minimal AI assistanc
 
 ## Stage 2
 I updated my program to accept short weekday names(mon,tue,wed,thu,fri). It also accepts both uppercase and lowercase inputs. I added input validation to show an error message when the user enters an invalid input such as ramdom words, numbers, or weekends (Saturday and Sunday). 
+
+## AI Tool Used
+I used Chat GPT to help improve my Python program
+I first asked Chat GPT what improvement I can make to my program and it suggested ading input validation. Also I asked how to accept short weekday names and handle uppercase and lowercase input. I accepted the suggestions that I understood and tested them in VS code. I also asked Chat GPT how to update and save my README.md file and how to commit and push my changes to GitHub using VS code.
+
+## Review
+I made adjustments when the program did not work correctly. For example, short weekday names like "mon" did not work because the program did no convert them into full weekday names. I added code to convert "mon" to " Monday" and other short names to full names. I tested the program again, and it worked correctly.

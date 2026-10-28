@@ -7,5 +7,20 @@ def show_schedule(day):
 
     for activity in schedule:
      print(activity)
-day=input("enter a weekday:")
-show_schedule(day)
+day=input("enter a weekday:").lower().strip()
+
+short_days = {
+    "mon": "Monday",
+    "tue": "Tuesday",
+    "wed": "Wednesday",
+    "thu": "Thursday",
+    "fri": "Friday"
+}
+if day in short_days:
+    day = short_days[day]
+else:
+    day = day.capitalize()
+if day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]:
+ show_schedule(day)
+else:
+    print("Invalid input. Please enter a valid weekday (Monday to Friday).")

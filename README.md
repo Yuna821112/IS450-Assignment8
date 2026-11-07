@@ -26,3 +26,22 @@ I first asked Chat GPT what improvement I can make to my program and it suggeste
 
 ## Review
 I made adjustments when the program did not work correctly. For example, short weekday names like "mon" did not work because the program did no convert them into full weekday names. I added code to convert "mon" to " Monday" and other short names to full names. I tested the program again, and it worked correctly.
+
+## Assignment 9: Dual-Approach Feature Development
+
+### AI Feature: Activity Search
+
+**Purpose:**
+Find activities in my weekly schedule without checking each day separately.
+
+**Expected Behavior:**
+The user can choose to view a day's schedule or search by activity keyword. The search displays all matching activities with their days and scheduled times, regardless of capitalization. If no activities match, the program displays a clear message. An empty keyword prompts the user to enter a keyword.
+
+This feature will first work with the existing weekday schedules. After both features are merged, it should also search the weekend schedules.
+
+**Planned Test Cases:**
+
+1. Search for `CPA`. The program should display all CPA study activities with their days and times.
+2. Search for `cpa`. The results should be the same as searching for `CPA`.
+3. Search for `ABCDE`. The program should display a no-matches message.
+4. Enter an empty keyword. The program should ask for a nonempty keyword.

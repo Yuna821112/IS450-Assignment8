@@ -26,3 +26,27 @@ I first asked Chat GPT what improvement I can make to my program and it suggeste
 
 ## Review
 I made adjustments when the program did not work correctly. For example, short weekday names like "mon" did not work because the program did no convert them into full weekday names. I added code to convert "mon" to " Monday" and other short names to full names. I tested the program again, and it worked correctly.
+
+## Assignment 9: Dual-Approach Feature Development
+
+### Manual Feature: Weekend Schedule
+
+**Purpose:**
+Extend my weekly schedule planner to include weekend activities, such as CPA study, team project meetings, quality time with my daughters, and grocery shopping.
+
+**Expected Behavior:**
+When the user enters Saturday or Sunday, the program displays the schedule for that day. Existing weekday schedules continue to work.
+
+**Planned Test Cases:**
+
+1. Enter `Saturday`. The program should display Saturday’s schedule, including CPA study and a team project meeting.
+2. Enter `Sunday`. The program should display Sunday’s schedule, including quality time with my daughters and grocery shopping.
+3. Enter `Monday`. The program should continue to display the existing Monday schedule.
+4. Enter `Funday`. The program should display an invalid-input message.
+
+**Test Results:**
+- Saturday and Sunday displayed the expected weekend schedules.
+- Monday displayed the existing weekday schedule.
+- Funday displayed the invalid-input message.
+- sat and sun displayed the correct weekend schedules.
+- Wednesday displayed the existing midweek schedule.

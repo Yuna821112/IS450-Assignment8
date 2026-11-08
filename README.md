@@ -45,3 +45,15 @@ This feature will first work with the existing weekday schedules. After both fea
 2. Search for `cpa`. The results should be the same as searching for `CPA`.
 3. Search for `ABCDE`. The program should display a no-matches message.
 4. Enter an empty keyword. The program should ask for a nonempty keyword.
+
+**Test Results:**
+- CPA and cpa returned the same five weekday CPA study activities.
+- abcde displayed "No matching activities found."
+- An empty keyword prompted the user to enter a nonempty keyword.
+- Choosing option 1 and entering mon displayed the existing Monday schedule.
+
+**AI Use:**
+I provided ChatGPT with my feature specification and existing Python code. ChatGPT generated the activity search implementation, including a menu, case-insensitive matching, and empty-keyword validation.
+
+**Code Review:**
+The schedule lists were moved into get_schedule() so that both schedule display and activity search could use them. The original day-only input flow was replaced with a menu. The search checks each weekday activity and displays matching results with the day and time.

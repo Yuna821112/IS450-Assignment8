@@ -29,6 +29,35 @@ I made adjustments when the program did not work correctly. For example, short w
 
 ## Assignment 9: Dual-Approach Feature Development
 
+### AI Feature: Activity Search
+
+**Purpose:**
+Find activities in my weekly schedule without checking each day separately.
+
+**Expected Behavior:**
+The user can choose to view a day's schedule or search by activity keyword. The search displays all matching activities with their days and scheduled times, regardless of capitalization. If no activities match, the program displays a clear message. An empty keyword prompts the user to enter a keyword.
+
+This feature will first work with the existing weekday schedules. After both features are merged, it should also search the weekend schedules.
+
+**Planned Test Cases:**
+
+1. Search for `CPA`. The program should display all CPA study activities with their days and times.
+2. Search for `cpa`. The results should be the same as searching for `CPA`.
+3. Search for `ABCDE`. The program should display a no-matches message.
+4. Enter an empty keyword. The program should ask for a nonempty keyword.
+
+**Test Results:**
+- CPA and cpa returned the same five weekday CPA study activities.
+- abcde displayed "No matching activities found."
+- An empty keyword prompted the user to enter a nonempty keyword.
+- Choosing option 1 and entering mon displayed the existing Monday schedule.
+
+**AI Use:**
+I provided ChatGPT with my feature specification and existing Python code. ChatGPT generated the activity search implementation, including a menu, case-insensitive matching, and empty-keyword validation.
+
+**Code Review:**
+The schedule lists were moved into get_schedule() so that both schedule display and activity search could use them. The original day-only input flow was replaced with a menu. The search checks each weekday activity and displays matching results with the day and time.
+
 ### Manual Feature: Weekend Schedule
 
 **Purpose:**
@@ -50,3 +79,24 @@ When the user enters Saturday or Sunday, the program displays the schedule for t
 - Funday displayed the invalid-input message.
 - sat and sun displayed the correct weekend schedules.
 - Wednesday displayed the existing midweek schedule.
+
+### Integration
+
+The weekend schedules and activity search were combined. ChatGPT helped resolve merge conflicts in main.py and README.md. The combined program supports viewing and searching all seven days.
+
+**Integration Test Results:**
+- Searching for cpa returned seven CPA study activities, including Saturday and Sunday.
+- Searching for meeting displayed Saturday's MACC team meeting.
+- Searching for family displayed Sunday's family activity.
+- Entering sat in the schedule menu displayed Saturday's full schedule.
+- Entering mon in the schedule menu displayed the existing Monday schedule.
+
+### Feature Development Comparison
+
+For my manual feature, I extended my existing weekday schedule planner to include Saturday and Sunday. This was manageable because I was adding more options to the same structure from the previous assignment. I wrote the weekend conditions and activity lists myself, although I used ChatGPT for help identifying syntax errors, documenting my work, and using Git.
+
+For the AI-assisted feature, I asked ChatGPT to add activity keyword searching. This made the planner more useful because I could find specific activities without viewing each day's complete schedule. Although the feature added more detailed functionality, it used the same schedule data, so its basic logic was not difficult to follow.
+
+The initial AI implementation passed my weekday search tests, including capitalization, no matches, and empty input. During integration, I used ChatGPT's help to combine the features and extend searching to all seven days. I accepted the search approach and did not reject any major AI-generated functionality.
+
+I feel slightly more confident explaining the manual feature because it closely follows my original code. However, both features share a familiar foundation. Testing the combined program helped me confirm that weekday schedules still worked and weekend activities appeared in search results.

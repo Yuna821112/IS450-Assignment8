@@ -90,3 +90,13 @@ The weekend schedules and activity search were combined. ChatGPT helped resolve 
 - Searching for family displayed Sunday's family activity.
 - Entering sat in the schedule menu displayed Saturday's full schedule.
 - Entering mon in the schedule menu displayed the existing Monday schedule.
+
+### Feature Development Comparison
+
+For my manual feature, I extended my existing weekday schedule planner to include Saturday and Sunday. This was manageable because I was adding more options to the same structure from the previous assignment. I wrote the weekend conditions and activity lists myself, although I used ChatGPT for help identifying syntax errors, documenting my work, and using Git.
+
+For the AI-assisted feature, I asked ChatGPT to add activity keyword searching. This made the planner more useful because I could find specific activities without viewing each day's complete schedule. Although the feature added more detailed functionality, it used the same schedule data, so its basic logic was not difficult to follow.
+
+The initial AI implementation passed my weekday search tests, including capitalization, no matches, and empty input. During integration, I used ChatGPT's help to combine the features and extend searching to all seven days. I accepted the search approach and did not reject any major AI-generated functionality.
+
+I feel slightly more confident explaining the manual feature because it closely follows my original code. However, both features share a familiar foundation. Testing the combined program helped me confirm that weekday schedules still worked and weekend activities appeared in search results.

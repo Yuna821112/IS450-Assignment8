@@ -57,3 +57,36 @@ I provided ChatGPT with my feature specification and existing Python code. ChatG
 
 **Code Review:**
 The schedule lists were moved into get_schedule() so that both schedule display and activity search could use them. The original day-only input flow was replaced with a menu. The search checks each weekday activity and displays matching results with the day and time.
+
+### Manual Feature: Weekend Schedule
+
+**Purpose:**
+Extend my weekly schedule planner to include weekend activities, such as CPA study, team project meetings, quality time with my daughters, and grocery shopping.
+
+**Expected Behavior:**
+When the user enters Saturday or Sunday, the program displays the schedule for that day. Existing weekday schedules continue to work.
+
+**Planned Test Cases:**
+
+1. Enter `Saturday`. The program should display Saturday’s schedule, including CPA study and a team project meeting.
+2. Enter `Sunday`. The program should display Sunday’s schedule, including quality time with my daughters and grocery shopping.
+3. Enter `Monday`. The program should continue to display the existing Monday schedule.
+4. Enter `Funday`. The program should display an invalid-input message.
+
+**Test Results:**
+- Saturday and Sunday displayed the expected weekend schedules.
+- Monday displayed the existing weekday schedule.
+- Funday displayed the invalid-input message.
+- sat and sun displayed the correct weekend schedules.
+- Wednesday displayed the existing midweek schedule.
+
+### Integration
+
+The weekend schedules and activity search were combined. ChatGPT helped resolve merge conflicts in main.py and README.md. The combined program supports viewing and searching all seven days.
+
+**Integration Test Results:**
+- Searching for cpa returned seven CPA study activities, including Saturday and Sunday.
+- Searching for meeting displayed Saturday's MACC team meeting.
+- Searching for family displayed Sunday's family activity.
+- Entering sat in the schedule menu displayed Saturday's full schedule.
+- Entering mon in the schedule menu displayed the existing Monday schedule.

@@ -13,7 +13,7 @@ def get_schedule(day):
             "7:30pm Study time",
             "10:30pm Bedtime"
         ]
-    else:
+    elif day in ["Tuesday", "Wednesday", "Thursday"]:
         schedule = [
             "5:30am wake up",
             "6:00am Breakfast",
@@ -26,6 +26,29 @@ def get_schedule(day):
             "7:30pm Study time",
             "10:30pm Bedtime"
         ]
+    elif day == "Saturday":
+        schedule = [
+            "8:30am wake up",
+            "9:00am Breakfast",
+            "10:00am CPA study",
+            "12:30pm Lunch",
+            "2:00pm MACC team meeting and working on projects",
+            "5:00pm Grocery shopping",
+            "6:30pm Dinner",
+            "8:00pm Free time",
+            "10:30pm Bedtime"
+        ]
+    elif day == "Sunday":
+        schedule = [
+            "8:30am wake up",
+            "9:00am Breakfast",
+            "10:00am CPA study",
+            "12:30pm Lunch",
+            "2:00pm Quality Time with Family",
+            "10:30pm Bedtime"
+        ]
+    else:
+        schedule = []
 
     return schedule
 
@@ -49,14 +72,19 @@ def search_activities(keyword):
         print("No matching activities found.")
 
 
-days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+days = [
+    "Monday", "Tuesday", "Wednesday", "Thursday",
+    "Friday", "Saturday", "Sunday"
+]
 
 short_days = {
     "mon": "Monday",
     "tue": "Tuesday",
     "wed": "Wednesday",
     "thu": "Thursday",
-    "fri": "Friday"
+    "fri": "Friday",
+    "sat": "Saturday",
+    "sun": "Sunday"
 }
 
 print("1. View a day's schedule")
@@ -64,7 +92,7 @@ print("2. Search activities")
 choice = input("Choose 1 or 2: ").strip()
 
 if choice == "1":
-    day = input("Enter a weekday: ").lower().strip()
+    day = input("Enter a day (Monday to Sunday): ").lower().strip()
 
     if day in short_days:
         day = short_days[day]
@@ -74,7 +102,7 @@ if choice == "1":
     if day in days:
         show_schedule(day)
     else:
-        print("Invalid input. Please enter a valid weekday (Monday to Friday).")
+        print("Invalid input. Please enter a valid day (Monday to Sunday).")
 
 elif choice == "2":
     keyword = input("Enter an activity keyword: ").strip()

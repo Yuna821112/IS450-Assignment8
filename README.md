@@ -43,3 +43,10 @@ When the user enters Saturday or Sunday, the program displays the schedule for t
 2. Enter `Sunday`. The program should display Sunday’s schedule, including quality time with my daughters and grocery shopping.
 3. Enter `Monday`. The program should continue to display the existing Monday schedule.
 4. Enter `Funday`. The program should display an invalid-input message.
+
+**Test Results:**
+- Saturday and Sunday displayed the expected weekend schedules.
+- Monday displayed the existing weekday schedule.
+- Funday displayed the invalid-input message.
+- sat and sun displayed the correct weekend schedules.
+- Wednesday displayed the existing midweek schedule.
